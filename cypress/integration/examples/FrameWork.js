@@ -27,7 +27,13 @@ describe('My first FrameWork  ', function ()
         cy.get('#inlineRadio3').should('be.disabled') 
 
         cy.get(':nth-child(2) > .nav-link').click()
-        cy.SelectProduct('Blackberry')
+       
+        
+        this.data.ProductName.forEach((element) => 
+        {
+            cy.SelectProduct(element)
+
+        })
 
 
 
