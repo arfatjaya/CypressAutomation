@@ -1,5 +1,7 @@
 ///<reference types="Cypress"/>
 
+import HomePage from '../PageObject/HomePage'
+
 
 describe('My first FrameWork  ', function ()
  {
@@ -14,19 +16,19 @@ describe('My first FrameWork  ', function ()
       })
     it('My first Test case', function () {
 
-      
+      const homePage=new HomePage()
         
         cy.visit('https://rahulshettyacademy.com/angularpractice/')
 
-        cy.get(':nth-child(1) > .form-control').type(this.data.name)
+        homePage.getEditBox().type(this.data.name)
         cy.wait(600)
-        cy.get('select').select(this.data.gender)
+        homePage.getGender().select(this.data.gender)
 
-        cy.get(':nth-child(4) > .ng-untouched').should('have.value',this.data.name)
-        cy.get(':nth-child(1) > .form-control').should('have.attr','minlength','2')
-        cy.get('#inlineRadio3').should('be.disabled') 
+        homePage.getDataBuind().should('have.value',this.data.name)
+        homePage.getEditBox().should('have.attr','minlength','2')
+        homePage.getenterpreniuor().should('be.disabled') 
 
-        cy.get(':nth-child(2) > .nav-link').click()
+        homePage.getShopTab().click()
        
         
         this.data.ProductName.forEach((element) => 

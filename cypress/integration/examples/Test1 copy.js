@@ -6,7 +6,7 @@ describe('My first Test State', function () {
         //radio button
         
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
-       /* cy.get('#checkBoxOption1').check().should('be.checked').and('have.value','option1')
+        cy.get('#checkBoxOption1').check().should('be.checked').and('have.value','option1')
         cy.wait(500)
         cy.get('#checkBoxOption1').uncheck().should('not.be.checked').and('have.value','option1')
         cy.wait(900)
@@ -30,7 +30,7 @@ describe('My first Test State', function () {
         })
 
 
-       */
+    
 //alert
 cy.get('#alertbtn').click()
 cy.on('window:alert',(str)=>

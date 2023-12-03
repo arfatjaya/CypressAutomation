@@ -9,14 +9,17 @@
 // ***********************************************
 //
 //
-Cypress.Commands.add('SelectProduct', (ProductName) => { cy.get('h4.card-title').each(($el, index, $list) => {
+Cypress.Commands.add('SelectProduct', (ProductName) => { cy.get('h4.card-title').each(($el, index, $list) =>
+ {
              
     if( $el.text().includes('Blackberry'))
     {
 
      cy.get('button.btn.btn-info').eq(index).click()
     }
- })})
+ })
+
+})
 
 
 // -- This is a parent command --
