@@ -1,6 +1,7 @@
 ///<reference types="Cypress"/>
 
 import HomePage from '../PageObject/HomePage'
+import ProductPage from '../PageObject/ProductPage'
 
 
 describe('My first FrameWork  ', function ()
@@ -17,6 +18,7 @@ describe('My first FrameWork  ', function ()
     it('My first Test case', function () {
 
       const homePage=new HomePage()
+      const productPage= new ProductPage()
         
         cy.visit('https://rahulshettyacademy.com/angularpractice/')
 
@@ -30,13 +32,13 @@ describe('My first FrameWork  ', function ()
 
         homePage.getShopTab().click()
        
-        
+         
         this.data.ProductName.forEach((element) => 
         {
             cy.SelectProduct(element)
 
         })
-
+        productPage.ClickCheckOut().click()
 
 
        
